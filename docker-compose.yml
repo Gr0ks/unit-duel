@@ -1,16 +1,18 @@
-version: "3.8"
+version: "3.7"
 services:
-#  duelbackend:
-#    build:
-#    dockerfile: ./services/backend/Dockerfile
-#    ports:
-#      - "8080:8080"
-#    volumes:
-#      - ./services/backend:/app
-#    container_name: duelBackend
-  duelfrontend:
+  duelbackend:
     build:
-    dockerfile: ./services/frontend/Dockerfile
+      context: ./services/backend/
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./services/backend:/app
+    container_name: duelBackend
+  duelfrontend:
+    build: 
+      context: ./services/frontend
+      dockerfile: Dockerfile
     volumes:
       - './services/frontend:/app'
       - '/app/node_modules'
