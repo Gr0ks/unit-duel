@@ -9,8 +9,8 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # установите зависимости приложения
-COPY package.json ./
-COPY yarn.json ./
+COPY ./package.json ./
+COPY ./yarn.lock ./
 RUN npm install yarn
 RUN yarn 
 
