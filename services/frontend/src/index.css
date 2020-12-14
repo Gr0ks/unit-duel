@@ -1,13 +1,132 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: rgb(240, 246, 252);
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+#root {
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "main";
+  grid-template-rows: 74px 1fr;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: 
+    "logo nav-panel profile";
+  grid-template-columns: 250px 1fr 100px;
+  grid-gap: 10px;
+  background: #161b22;
+  color: rgb(240, 246, 252);
+}
+
+.logo{
+  height: 100%;
+  grid-area: logo;
+  padding: 25px;
+}
+
+.navigation-panel {
+  grid-area: nav-panel;
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  color: rgb(240, 246, 252);
+}
+
+.navigation-item {
+  padding: 25px;
+}
+
+.profile{
+  grid-area: profile;
+  padding: 25px;
+}
+
+.main {
+  grid-area: main;
+  min-height: 700px;
+  margin: 0;
+  background: rgb(13, 17, 23);
+  color: rgb(139, 148, 158);
+  padding: 50px;
 }
