@@ -1,9 +1,10 @@
 import { Switch, Route, } from "react-router-dom";
 
 import Home from "../components/Home";
-import About from "../components/About";
+import Room from "../components/Room";
 import User from "../components/User";
 import Login from "../components/Login";
+
 
 export default function Routes() {
     /* A <Switch> looks through its children <Route>s and
@@ -15,7 +16,7 @@ export default function Routes() {
                     <Login />
                 </Route>
                 <Route path="/room">
-                    <About />
+                    <Room />
                 </Route>
                 <Route path="/user">
                     <User />
