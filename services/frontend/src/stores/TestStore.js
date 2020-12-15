@@ -7,12 +7,16 @@ class Store {
         this.value = value;
         makeObservable(this, {
             value: observable,
-            set: action
+            __set: action
         });
     }
 
-    set(v) {
+    __set(v) {
         this.value = v;
+    }
+
+    setValue(v) {
+        this.__set(v);
     }
 }
 
