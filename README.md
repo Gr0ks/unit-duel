@@ -5,7 +5,7 @@
 
 ## Release Plan
 ### v0.0.0
- - [x] Create progect structure
+ - [x] Create project structure
  - [x] Create Dockerfiles and docker-compose files for dev configuration
  - [x] Add packeges to frontend app
  - [x] Create test pages and test store in frontend app
