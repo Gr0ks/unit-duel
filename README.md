@@ -1,5 +1,8 @@
 # Unit Duel
 
+## Current Version
+[v0.0.1](#v000)
+
 ## Release Plan
 ### v0.0.0
  - [x] Create progect structure
