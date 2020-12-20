@@ -10,7 +10,7 @@
  - [x] Add packeges to frontend app
  - [x] Create test pages and test store in frontend app
  - [x] Create test app in backend app
- - [ ] Create API server in backend app
+ - [x] Create API server in backend app
 
 ### v0.1.0
  - [ ] Create frontend User Class store
