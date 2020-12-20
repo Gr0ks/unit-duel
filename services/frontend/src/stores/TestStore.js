@@ -18,6 +18,16 @@ class Store {
     setValue(v) {
         this.__set(v);
     }
+
+    async getFromServer() {
+        const resp = await fetch(`http://localhost:8080/api/v0`)
+        if (resp.ok) {
+            const r = await resp.json()
+            console.log(r)
+            this.__set(r.version)
+        }
+        
+    }
 }
 
 window.testStore = new Store('test');
