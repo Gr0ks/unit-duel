@@ -1,5 +1,7 @@
 FROM golang:latest 
-WORKDIR /app 
+WORKDIR /go/src/app 
 COPY . .
-RUN go build -o main
-RUN ./main
+
+RUN go get github.com/gorilla/mux
+RUN go build -o main .
+CMD ["/go/src/app/main"]
